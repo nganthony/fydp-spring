@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS `appdb` /*!40100 DEFAULT CHARACTER SET latin1 */;  
+USE `appdb`; 
+
+CREATE TABLE bin_data (
+	id INT NOT NULL AUTO_INCREMENT,
+	bin_system_id INT NOT NULL,
+	bin_id INT NOT NULL,
+	data DECIMAL(8, 2) NOT NULL,
+	created_timestamp DATETIME,
+	PRIMARY KEY (id)
+) ENGINE=INNODB;
