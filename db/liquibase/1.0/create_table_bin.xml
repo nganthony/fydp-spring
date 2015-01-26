@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<databaseChangeLog 
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd"> 
+
+	<changeSet author="anthony" id="10">
+		<createTable tableName="bin">
+			<column name="id" type="INT" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			
+			<column name="bin_system_id" type="INT">
+				<constraints nullable="false" 
+					references="bin_system(id)"
+					foreignKeyName="fk_bin_bin_system"/>
+			</column>
+			
+			<column name="name" type="VARCHAR(30)"/>
+			
+			<column name="description" type="VARCHAR(80)"/>
+			
+			<column name="image_url" type="VARCHAR(150)"/>
+			
+			<column name="purchase_url" type="VARCHAR(150)"/>
+			
+			<column name="mass_per_item" type="DECIMAL(8, 2)"/>
+			
+			<column name="total_mass" type="DECIMAL(8, 2)"/>
+			
+			<column name="created_timestamp" type="TIMESTAMP" 
+				defaultValueDate="CURRENT_TIMESTAMP"/>
+		</createTable>
+	</changeSet>	
+	
+</databaseChangeLog> 

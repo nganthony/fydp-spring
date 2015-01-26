@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS `appdb` /*!40100 DEFAULT CHARACTER SET latin1 */;  
 USE `appdb`; 
 
+CREATE TABLE bin 
 CREATE TABLE bin_data (
 	id INT NOT NULL AUTO_INCREMENT,
 	bin_system_id INT NOT NULL,
