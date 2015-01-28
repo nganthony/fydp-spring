@@ -12,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.fydp.domain.BinData;
+import com.fydp.jdbc.BinDataRowMapper;
+
 @Repository
 public class BinDataDao {
 
@@ -34,14 +37,14 @@ public class BinDataDao {
 		jdbcTemplate.update(sql, params);
 	}
 	
-	public List<Double> getAllData(int binSystemId, int binId) {
-		List<Double> result = new ArrayList<Double>();
+	public List<BinData> getAllData(int binSystemId, int binId) {
+		List<BinData> result = new ArrayList<BinData>();
 		
-		final String sql = "SELECT data FROM bin_data WHERE bin_system_id = ? AND bin_id = ?";
+		final String sql = "SELECT * FROM bin_data WHERE bin_system_id = ? AND bin_id = ?";
 		
 		Object[] params = new Object[] {binSystemId, binId};
 		
-		result = jdbcTemplate.queryForList(sql, params, Double.class);
+		result = jdbcTemplate.query(sql, params, new BinDataRowMapper());
 		return result;
 	}
 }
