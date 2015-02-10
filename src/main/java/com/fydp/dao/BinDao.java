@@ -3,6 +3,7 @@ package com.fydp.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -61,5 +62,13 @@ public class BinDao {
 		
 		Bin bin = jdbcTemplate.queryForObject(sql, params, new BinRowMapper());
 		return bin;
+	}
+	
+	public List<Bin> getBinsBySystemId(int binSystemId) {
+		String sql = "SELECT * FROM bin WHERE bin_system_id = ?";
+		Object[] params = new Object[] {binSystemId};
+		
+		List<Bin> bins = jdbcTemplate.query(sql, params, new BinRowMapper());
+		return bins;
 	}
 }
