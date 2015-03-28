@@ -26,4 +26,8 @@ public class BinServiceImpl implements BinService {
 		return binDao.getBinsBySystemId(binSystemId);
 	}
 
+	public void updateCurrentMass(int binSystemId, int binId, double data) {
+		binDao.updateCurrentMass(binSystemId, binId, data);
+	}
+
 }

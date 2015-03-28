@@ -23,6 +23,7 @@ public class BinExtractor implements ResultSetExtractor<Bin> {
 		bin.setPurchaseUrl(resultSet.getString("purchase_url"));
 		bin.setMassPerItem(resultSet.getDouble("mass_per_item"));
 		bin.setTotalMass(resultSet.getDouble("total_mass"));
+		bin.setCurrentMass(resultSet.getDouble("current_mass"));
 		bin.setCreatedTimestamp(resultSet.getTimestamp("created_timestamp"));
 		
 		return bin;

@@ -71,4 +71,13 @@ public class BinDao {
 		List<Bin> bins = jdbcTemplate.query(sql, params, new BinRowMapper());
 		return bins;
 	}
+	
+	public void updateCurrentMass(int binSystemId, int binId, double data) {
+		String sql = "UPDATE bin" + 
+					" SET current_mass = ?" + 
+					" WHERE bin_system_id = ? AND id = ?";
+		
+		Object[] params = new Object[] {data, binSystemId, binId};
+		jdbcTemplate.update(sql, params);
+	}
 }

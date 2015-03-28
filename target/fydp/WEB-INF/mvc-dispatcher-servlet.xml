@@ -33,7 +33,7 @@
 
 		<!-- Amazon Web Services -->
 		<property name="url"
-			value="jdbc:mysql://fydp.cffep0qikwbq.us-west-2.rds.amazonaws.com:3306/appdb?useLegacyDatetimeCode=false"></property>
+			value="jdbc:mysql://appdb.ck8cqzjsidsk.us-west-2.rds.amazonaws.com:3306/appdb?useLegacyDatetimeCode=false"></property>
 		<property name="username" value="admin"></property>
 		<property name="password" value="password"></property>
 

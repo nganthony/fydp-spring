@@ -9,4 +9,5 @@ public interface BinService {
 	public int insertBin(Bin bin);
 	public Bin getBinById(int id);
 	public List<Bin> getBinsBySystemId(int binSystemId);
+	public void updateCurrentMass(int binSystemId, int binId, double data);
 }

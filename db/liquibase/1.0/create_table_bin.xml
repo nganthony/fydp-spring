@@ -29,6 +29,9 @@
 			
 			<column name="total_mass" type="DECIMAL(8, 2)"/>
 			
+			<column name="current_mass" type="DECIMAL(8, 2)"
+				defaultValue="0"/>
+			
 			<column name="created_timestamp" type="TIMESTAMP" 
 				defaultValueDate="CURRENT_TIMESTAMP"/>
 		</createTable>

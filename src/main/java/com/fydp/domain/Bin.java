@@ -14,6 +14,7 @@ public class Bin {
 	private String purchaseUrl;
 	private double massPerItem;
 	private double totalMass;
+	private double currentMass;
 	private Timestamp createdTimestamp;
 	
 	public int getId() {
@@ -78,6 +79,14 @@ public class Bin {
 	
 	public void setTotalMass(double totalMass) {
 		this.totalMass = totalMass;
+	}
+	
+	public double getCurrentMass() {
+		return currentMass;
+	}
+	
+	public void setCurrentMass(double currentMass) {
+		this.currentMass = currentMass;
 	}
 	
 	public Timestamp getCreatedTimestamp() {
